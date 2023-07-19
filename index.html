@@ -1,19 +1,35 @@
-<html>
+<!DOCTYPE html>
+<html  lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test Node.js application</title>
     <!-- Comment out the line below to do the extension problem! -->
     <link rel="stylesheet" type="text/css" href="./style.css" />
   </head>
   <body>
-    <p>
+    <main>
+    <h1>
       This is a test node.js application deployed to AWS. More comming soon!
+    </h1>
+    <p>
+      <ul>
+        <li>👋 Hi, I’m @pfellow</li>
+        <li>👀 I’m interested in full-stack development (React, Node.js, AWS)</li>
+        <li>📚 I'm studying Master of IT at Whitireia/Weltec (Wellington, New Zealand)</li>
+        <li>🌱 I’m currently practising, building pet projects with React.js, Node.js, and AWS</li>
+        <li>💞️ I’m looking for a part-time or internship position while studying or/and a full-time position after my graduation in November 2023 (New Zealand, preferably Wellington or Auckland)</li>
+        <li>📑 I'm currently working on my portfolio website which should be available soon here: <a href="http://pfellow.me/">http://pfellow.me/</a></li>
+        <li>📫 How to reach me: <a href="mailto:pfellow@outlook.co.nz">pfellow@outlook.co.nz</a> or <a href="https://www.linkedin.com/in/sergey-shilovskiy/">LinkedIn</a></li>
+      </ul>
     </p>
+    <p>The following buttons send simple requests to a node.js server to receive simple responses (check console!)</p>
     <button id="hiButton">Say hi!</button>
     <button id="helloButton">Greet the server with hello!</button>
     <button id="whatsUpButton">Greet the server with what's up!</button>
     <button id="updateButton">UPDATE</button>
     <button id="deleteButton">DELETE</button>
+  </main>
   </body>
   <script>
     var xmlHttp = new XMLHttpRequest();
