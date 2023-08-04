@@ -62,7 +62,7 @@ function doOnRequest(request, response) {
       response.write(data);
       response.end();
     });
-  } else if (request.method === 'GET' && request.url.includes('logo')) {
+  } else if (request.method === 'GET' && request.url.includes('svg')) {
     //req.url has the pathname, check if it contains '.css'
 
     fs.readFile(
@@ -88,7 +88,9 @@ function doOnRequest(request, response) {
             ? { 'Content-Type': 'text/javascript' }
             : fileType === 'css'
             ? { 'Content-Type': 'text/css' }
-            : { 'Content-Type': 'image/png' };
+            : fileType === 'png' || fileType === 'jpg'
+            ? { 'Content-Type': 'image/png' }
+            : { 'Content-Type': 'application/pdf' };
         response.writeHead(200, contentType);
         response.write(data);
         response.end();
