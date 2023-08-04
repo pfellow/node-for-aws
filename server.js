@@ -11,6 +11,11 @@ function doOnRequest(request, response) {
     const fileToServe = fs.readFileSync(path.join(__dirname, 'index.html'));
     response.write(fileToServe);
     response.end();
+  } else if (request.method === 'GET' && request.url === '/3dportfolio') {
+    // read the index.html file from 3dportfolio and send it back to the client
+    const fileToServe = fs.readFileSync(path.join(__dirname, '3dportfolio', index.html'));
+    response.write(fileToServe);
+    response.end();
   } else if (request.method === 'POST' && request.url === '/sayHi') {
     fs.appendFileSync(
       path.join(__dirname, 'hi_log.txt'),
