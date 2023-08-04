@@ -13,7 +13,9 @@ function doOnRequest(request, response) {
     response.end();
   } else if (request.method === 'GET' && request.url === '/3dportfolio') {
     // read the index.html file from 3dportfolio and send it back to the client
-    const fileToServe = fs.readFileSync(path.join(__dirname, '3dportfolio', 'index.html'));
+    const fileToServe = fs.readFileSync(
+      path.join(__dirname, '3dportfolio', 'index.html')
+    );
     response.write(fileToServe);
     response.end();
   } else if (request.method === 'POST' && request.url === '/sayHi') {
@@ -60,6 +62,50 @@ function doOnRequest(request, response) {
       response.write(data);
       response.end();
     });
+  } else if (request.method === 'GET' && request.url.includes('logo')) {
+    //req.url has the pathname, check if it contains '.css'
+
+    fs.readFile(
+      path.join(__dirname, '3dportfolio', request.url),
+      function (err, data) {
+        if (err) console.log(err);
+        response.writeHead(200, { 'Content-Type': 'image/svg+xml' });
+        response.write(data);
+        response.end();
+      }
+    );
+  } else if (request.method === 'GET' && request.url.includes('assets')) {
+    //req.url has the pathname, check if it conatins '.css'
+
+    const fileType = request.url.split('.')[1];
+
+    fs.readFile(
+      path.join(__dirname, '3dportfolio', request.url),
+      function (err, data) {
+        if (err) console.log(err);
+        const contentType =
+          fileType === 'js'
+            ? { 'Content-Type': 'text/javascript' }
+            : fileType === 'css'
+            ? { 'Content-Type': 'text/css' }
+            : { 'Content-Type': 'image/png' };
+        response.writeHead(200, contentType);
+        response.write(data);
+        response.end();
+      }
+    );
+  } else if (request.method === 'GET' && request.url.includes('mac')) {
+    //req.url has the pathname, check if it conatins '.css'
+
+    fs.readFile(
+      path.join(__dirname, '3dportfolio', request.url),
+      function (err, data) {
+        if (err) console.log(err);
+        response.writeHead(200);
+        response.write(data);
+        response.end();
+      }
+    );
   } else {
     //   // Handle 404 error: page not found
     response.statusCode = 404;
