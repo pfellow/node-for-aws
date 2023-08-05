@@ -1,0 +1,11 @@
+Model Information:
+* title:	iphone model with realistic glowing surface
+* source:	https://sketchfab.com/3d-models/iphone-model-with-realistic-glowing-surface-1ec8be8b68dc4f018160e5523319d57f
+* author:	yaniv.amon13 (https://sketchfab.com/yaniv.amon13)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "iphone model with realistic glowing surface" (https://sketchfab.com/3d-models/iphone-model-with-realistic-glowing-surface-1ec8be8b68dc4f018160e5523319d57f) by yaniv.amon13 (https://sketchfab.com/yaniv.amon13) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -77,7 +77,9 @@ function doOnRequest(request, response) {
   } else if (request.method === 'GET' && request.url.includes('assets')) {
     //req.url has the pathname, check if it conatins '.css'
 
-    const fileType = request.url.split('.')[1];
+    const fileType = request.url.split('.')[2] || request.url.split('.')[1];
+
+    console.log(fileType);
 
     fs.readFile(
       path.join(__dirname, '3dportfolio', request.url),
@@ -88,7 +90,7 @@ function doOnRequest(request, response) {
             ? { 'Content-Type': 'text/javascript' }
             : fileType === 'css'
             ? { 'Content-Type': 'text/css' }
-            : fileType === 'png' || fileType === 'jpg'
+            : fileType === 'png' || fileType === 'jpg' || fileType === 'webp'
             ? { 'Content-Type': 'image/png' }
             : { 'Content-Type': 'application/pdf' };
         response.writeHead(200, contentType);
@@ -96,7 +98,10 @@ function doOnRequest(request, response) {
         response.end();
       }
     );
-  } else if (request.method === 'GET' && request.url.includes('mac')) {
+  } else if (
+    request.method === 'GET' &&
+    (request.url.includes('imac') || request.url.includes('iphone'))
+  ) {
     //req.url has the pathname, check if it conatins '.css'
 
     fs.readFile(
