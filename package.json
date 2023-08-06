@@ -1,9 +1,10 @@
 {
-  "name": "node-frontend-masters",
+  "name": "aws-portfolio",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "dependencies": {
+    "express": "^4.18.2",
     "through2": "^3.0.1"
   },
   "scripts": {
