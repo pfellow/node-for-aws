@@ -79,8 +79,6 @@ function doOnRequest(request, response) {
 
     const fileType = request.url.split('.')[2] || request.url.split('.')[1];
 
-    console.log(fileType);
-
     fs.readFile(
       path.join(__dirname, '3dportfolio', request.url),
       function (err, data) {
