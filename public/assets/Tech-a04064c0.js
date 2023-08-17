@@ -1,0 +1,1 @@
+import{j as t,I as e}from"./index-900dacd6.js";import{S as o}from"./SectionWrapper-1bbdba7a.js";import"./styles-1b0f9c50.js";import"./motion-a8b1eaaa.js";const s=()=>t.jsx("div",{className:"flex justify-center",children:t.jsx(e,{})}),m=o(s,"tech");export{m as default};
